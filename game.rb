@@ -19,10 +19,10 @@ class Game < Item
 
   def to_json(*info)
     super.merge({
-      JSON.create_id => self.class.name,
-      'multiplayer' => @multiplayer,
-      'last_played_at' => @last_played_at
-    }).to_json(*info)
+                  JSON.create_id => self.class.name,
+                  'multiplayer' => @multiplayer,
+                  'last_played_at' => @last_played_at
+                }).to_json(*info)
   end
 
   def self.json_create(object)
