@@ -3,7 +3,7 @@ class Item
   attr_accessor :id
 
   def initialize(publish_date)
-    @id = Random(1...1000)
+    @id = Random.rand(1...1000)
     @publish_date = publish_date
     @archived = false
   end
@@ -28,13 +28,13 @@ class Item
     source.items.push(self) unless genre.items.include?(self)
   end
 
-  def move_to_archived
+  def move_to_archive
     @archived = can_be_archived?
   end
 
   private
 
-  def can_be_archived
+  def can_be_archived?
     (Time.now.year - @publish_date.year) > 10
   end
 end
