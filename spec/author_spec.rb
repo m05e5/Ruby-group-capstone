@@ -6,7 +6,7 @@ describe Author do
   end
 
   # describe '#add_items' do
-  #   it 'should add a new item' do 
+  #   it 'should add a new item' do
   #     item = Item.new Time.now
   #     @author.add_items item
   #     expect(@author.items).to include(item)
