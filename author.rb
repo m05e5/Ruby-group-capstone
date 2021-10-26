@@ -10,7 +10,7 @@ class Author
   end
 
   def add_items(item)
-    @items << item
+    @items.push item
     item.add_author self
   end
 
