@@ -1,3 +1,3 @@
 def main
-  puts "ruby template"
+  puts 'ruby template'
 end
