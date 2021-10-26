@@ -4,13 +4,13 @@ require_relative 'author'
 require_relative 'game'
 require_relative 'book'
 require_relative 'label'
-require_relative 'time'
+require 'time'
 
 module AddLogics
   def add_associations(item)
-    add_genre(item)
-    add_author(item)
-    add_label(item)
+    add_genre item
+    add_author item
+    add_label item
   end
 
   def add_genre(item)
@@ -21,6 +21,7 @@ module AddLogics
 
     if option == 'n'
       print 'Genre name: '
+      genre = Genre.new(gets.chomp)
       @genres << genre
     else
       genre = @genres[option.to_i]
@@ -46,7 +47,7 @@ module AddLogics
     else
       author = @authors[option.to_i]
     end
-    item.add_author
+    item.add_author author
   end
 
   def add_label(item)
@@ -63,11 +64,10 @@ module AddLogics
       color = gets.chomp
 
       label = Label.new(title, color)
-      @labelss << label
+      @labels << label
     else
-      label = @labelss[option.to_i]
+      label = @labels[option.to_i]
     end
-    item.add_label
+    item.add_label label
   end
 end
-
