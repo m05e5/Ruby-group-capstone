@@ -13,7 +13,7 @@ class Storage
     authors = load_file('authors.json')
     labels = load_file('labels.json')
     items = load_file('items.json')
-    make_relationships(items, genres, authors, labels)
+    create_relationships(items, genres, authors, labels)
 
     {
       'genres' => genres,
@@ -23,7 +23,7 @@ class Storage
     }
   end
 
-  def make_relationships(items, genres, authors, labels)
+  def create_relationships(items, genres, authors, labels)
     file = 'items.json'
     if File.exist? file
       json_arr = JSON.parse(File.read(file))
