@@ -1,4 +1,4 @@
-require_relative '/item.rb'
+require_relative '/item'
 
 class Book < Item
   attr_accessor :publisher, :cover_state
@@ -21,10 +21,10 @@ class Book < Item
 
   def to_json(*info)
     super.merge({
-      JSON.create_id => self.class.name,
-      'publisher' => @publisher,
-      'cover_state' => @cover_state
-    }).to_json(*info)
+                  JSON.create_id => self.class.name,
+                  'publisher' => @publisher,
+                  'cover_state' => @cover_state
+                }).to_json(*info)
   end
 
   def self.json_create(object)
