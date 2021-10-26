@@ -1,6 +1,5 @@
 require_relative 'book'
 require_relative 'game'
-# require_relative 'movie'
 require_relative 'music_al'
 
 module ListLogic
@@ -8,8 +7,7 @@ module ListLogic
     puts 'Please select an option by entering a number:'
     puts '1 - List all books'
     puts '2 - List all music albums'
-    puts '3 - List all movies'
-    puts '4 - List all games'
+    puts '3 - List all games'
     option = gets.chomp
 
     case option
@@ -18,8 +16,6 @@ module ListLogic
     when '2'
       list_music_albums
     when '3'
-      list_movies
-    when '4'
       list_games
     else
       puts 'That is not a valid input'
@@ -34,10 +30,6 @@ module ListLogic
     @authors.each { |author| puts author }
   end
 
-  def list_sources
-    @sources.each { |source| puts source }
-  end
-
   def list_labels
     @labels.each { |label| puts label }
   end
@@ -49,10 +41,6 @@ module ListLogic
   def list_music_albums
     @items.each { |item| puts item if item.instance_of? MusicAlbum }
   end
-
-  # def list_movies
-  #   @items.each { |item| puts item if item.instance_of? Movie }
-  # end
 
   def list_games
     @items.each { |item| puts item if item.instance_of? Game }
