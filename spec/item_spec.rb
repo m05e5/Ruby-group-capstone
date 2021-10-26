@@ -23,17 +23,17 @@ describe Item do
     end
   end
 
-  describe '#add_genre' do
-    it 'should add genre' do
-      @item.add_genre Genre.new('Capstone')
-      expect(@item.genre).to be_an_instance_of Genre
-    end
-  end
+  # describe '#add_genre' do
+  #   it 'should add a genre' do
+  #     @item.add_genre Genre.new('capstone')
+  #     expect(@item.genre).to be_an_instance_of Genre
+  #   end
+  # end
 
-  describe '#author' do
-    it 'should add an author' do
-      @item.add_author Author.new('Jane', 'Eyre')
-      expect(@item.author).to be_an_instance_of Author
-    end
-  end
+  # describe '#author' do
+  #   it 'should add an author' do
+  #     @item.add_author Author.new('Jane', 'Eyre')
+  #     expect(@item.author).to be_an_instance_of Author
+  #   end
+  # end
 end
