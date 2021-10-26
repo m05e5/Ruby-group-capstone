@@ -22,7 +22,6 @@ describe Item do
       end
     end
   end
-
   # describe '#add_genre' do
   #   it 'should add a genre' do
   #     @item.add_genre Genre.new('capstone')
