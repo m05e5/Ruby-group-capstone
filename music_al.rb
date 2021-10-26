@@ -1,10 +1,10 @@
 require_relative 'item'
 
-class MusicAlbum < item
+class MusicAlbum < Item
   attr_accessor :on_spotify
 
-  def initialize(on_spotify, *args)
-    super(*args)
+  def initialize(publish_date, on_spotify)
+    super(publish_date)
     @on_spotify = on_spotify
   end
 
@@ -13,8 +13,19 @@ class MusicAlbum < item
   end
 
   def to_s
-    "[Music Album] on spotify: #{@on_spotify}, #{super}"
+    "\n[Music Album ID #{id}]\non spotify: #{@on_spotify}\n#{super}\n"
   end
 
+  def to_json(*infos)
+    super.merge({
+                  JSON.create_id => self.class.name,
+                  'on_spotify' => @on_spotify
+                }).to_json(*infos)
+  end
+
+  def self.json_create(object)
+    album = new(Date.parse(object['publish_date']), object['on_spotify'])
+    album.id = object['id']
+    album
+  end
 end
-   

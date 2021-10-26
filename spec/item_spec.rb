@@ -14,7 +14,7 @@ describe Item do
     end
 
     context 'Will move item to archive, if > 10 years' do
-      item = Item.new(Time.new(1997, 01, 07))
+      item = Item.new(Time.new(1997, 0o1, 0o7))
       item.move_to_archive
 
       it 'will be archived' do
@@ -29,13 +29,4 @@ describe Item do
       expect(@item.genre).to be_an_instance_of Genre
     end
   end
-
-  describe '#author' do
-    it 'should add an author' do
-      @item.add_author Author.new('Jane', 'Eyre')
-      expect(@item.author).to be_an_instance_of Author
-    end
-  end
-
-  
 end

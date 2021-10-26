@@ -2,7 +2,7 @@ require_relative 'required_files'
 
 describe Genre do
   before :each do
-    @genre = Genre.new 'programming'
+    @genre = Genre.new 'metal'
   end
 
   describe '#add_item' do
