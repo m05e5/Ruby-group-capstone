@@ -22,15 +22,16 @@ class App
     puts 'Welcome to our catalog of things app'
 
     loop do
-      puts 
+      puts
       actions
 
       option = gets.chomp
 
       break if option == '6'
+
       storage = Storage.new
       storage.store(@items, @genres, @authors, @labels)
-      
+
       handle_action(option)
     end
 
@@ -70,7 +71,7 @@ class App
     2 - Add a music album
     3 - Add a game'
 
-    option =  gets.chomp
+    option = gets.chomp
     handle_add_item(option)
   end
 
@@ -86,5 +87,4 @@ class App
       puts 'That is not a valid option'
     end
   end
-  
 end
