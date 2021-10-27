@@ -8,9 +8,9 @@ require 'time'
 
 module AddLogics
   def add_associations(item)
-    add_genre item
-    add_author item
-    add_label item
+    add_genre(item)
+    add_author(item)
+    add_label(item)
   end
 
   def add_genre(item)
@@ -26,7 +26,7 @@ module AddLogics
     else
       genre = @genres[option.to_i]
     end
-    item.add_genre genre
+    item.add_genre(genre)
   end
 
   def add_author(item)
@@ -47,7 +47,7 @@ module AddLogics
     else
       author = @authors[option.to_i]
     end
-    item.add_author author
+    item.add_author(author)
   end
 
   def add_label(item)
@@ -68,6 +68,6 @@ module AddLogics
     else
       label = @labels[option.to_i]
     end
-    item.add_label label
+    item.add_label(label)
   end
 end

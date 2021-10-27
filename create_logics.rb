@@ -18,7 +18,14 @@ module CreateLogics
     MusicAlbum.new(publish_date, on_spotify)
   end
 
-  def create_game; end
+  def create_game
+    print 'Is the game multiplayer? [y/n]: '
+    is_multiplayer = gets.chomp.downcase == 'y'
+    print 'IT was last played at? (YYYY/MM/DD): '
+    last_played_at = Time.parse(gets.chomp)
+
+    Game.new(is_multiplayer, last_played_at, publish_date)
+  end
 
   def publish_date
     print 'Publish date? (YYYY/MM/DD): '

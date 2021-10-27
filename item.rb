@@ -28,12 +28,12 @@ class Item
     game.items.push(self) unless game.items.include?(self)
   end
 
-  def move_to_archive
+  def move_archive
     @archived = can_be_archived?
   end
 
   def to_s
-    "ID: #{@id}, Published Date: #{publish_date.strftime('%Y/%m/%d')}, Author: #{@author}, \
+    "ID: #{@id}, Published Date: #{@publish_date.strftime('%Y/%m/%d')}, Author: #{@author}, \
     Genre: #{@genre}, Label: #{@label}"
   end
 

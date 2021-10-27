@@ -13,16 +13,16 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 
-  def display
-    "[Book] publisher: #{@publisher}, cover state: #{@cover_state}"
+  def to_s
+    "[Book] publisher: #{@publisher}, cover state: #{@cover_state}, #{super}"
   end
 
-  def to_json(publish_date)
+  def to_json(*infos)
     super.merge({
                   JSON.create_id => self.class.name,
                   'publisher' => @publisher,
                   'cover_state' => @cover_state
-                }).to_json(publish_date)
+                }).to_json(*infos)
   end
 
   def self.json_create(object)

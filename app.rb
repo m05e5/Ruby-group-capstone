@@ -80,11 +80,11 @@ class App
 
     case option
     when '1'
-      create_book
+      item = create_book
     when '2'
-      create_music_album
+      item = create_music_album
     when '3'
-      create_game
+      item = create_game
     else
       puts 'Please that is not a valid option'
       return nil

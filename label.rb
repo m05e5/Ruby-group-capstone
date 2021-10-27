@@ -1,6 +1,6 @@
 class Label
-  attr_accessor :title, :color
-  attr_reader :id, :items
+  attr_accessor :title, :color, :id
+  attr_reader :items
 
   def initialize(title, color)
     @id = Random.rand(1..1000)
@@ -14,8 +14,8 @@ class Label
     item.add_label self
   end
 
-  def display
-    "#{@title} #{@color}"
+  def to_s
+    @title
   end
 
   def to_json(*info)
