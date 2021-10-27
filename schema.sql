@@ -26,7 +26,7 @@ CREATE TABLE label (
   PRIMARY KEY(id)
 );
 
-CREATE TABLE music_album (
+CREATE TABLE book (
   id           INT GENERATED ALWAYS AS IDENTITY,
   publisher    VARCHAR(100),
   cover_state  VARCHAR(100),
@@ -37,5 +37,6 @@ CREATE TABLE music_album (
   archived     BOOLEAN,
   PRIMARY KEY(id),
   FOREIGN KEY(genre_id) REFERENCES genre(id),
-  FOREIGN KEY(author_id) REFERENCES author(id),  FOREIGN KEY(label_id) REFERENCES label(id)
+  FOREIGN KEY(author_id) REFERENCES author(id),  
+  FOREIGN KEY(label_id) REFERENCES label(id)
 );
