@@ -4,6 +4,7 @@ require_relative 'author'
 require_relative 'game'
 require_relative 'book'
 require_relative 'label'
+require_relative './app'
 require 'time'
 
 module AddLogics
@@ -23,6 +24,8 @@ module AddLogics
       print 'Genre name: '
       genre = Genre.new(gets.chomp)
       @genres << genre
+    elsif option.to_i >= @genres.length
+      bad_option
     else
       genre = @genres[option.to_i]
     end
@@ -41,9 +44,10 @@ module AddLogics
 
       print 'Author last name: '
       last_name = gets.chomp
-
       author = Author.new(first_name, last_name)
       @authors << author
+    elsif option.to_i >= @authors.length
+      bad_option
     else
       author = @authors[option.to_i]
     end
@@ -55,7 +59,6 @@ module AddLogics
     @labels.each_with_index { |label, idx| puts "#{idx} - #{label} #{label.color}" }
     option = gets.chomp.downcase
     label = nil
-
     if option == 'n'
       print 'Label title: '
       title = gets.chomp
@@ -65,9 +68,19 @@ module AddLogics
 
       label = Label.new(title, color)
       @labels << label
+    elsif option.to_i >= @labels.length
+      bad_option
     else
       label = @labels[option.to_i]
     end
     item.add_label(label)
+  end
+
+  def bad_option
+    puts '
+    Wrong option please start again
+    '
+    app = App.new
+    app.run
   end
 end
