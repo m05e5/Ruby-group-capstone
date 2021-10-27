@@ -8,14 +8,14 @@ describe Item do
   describe '#move to archive' do
     context 'Will not item to archive, if too young' do
       it 'will not be archived' do
-        @item.move_to_archive
+        @item.move_archive
         expect(@item.archived).to be_falsey
       end
     end
 
     context 'Will move item to archive, if > 10 years' do
       item = Item.new(Time.new(1997, 0o1, 0o7))
-      item.move_to_archive
+      item.move_archive
 
       it 'will be archived' do
         expect(item.archived).to be_truthy
