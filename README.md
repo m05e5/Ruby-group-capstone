@@ -38,6 +38,7 @@ rspec
 
 - GitHub: [@moses](https://github.com/m05e5)
 - LinkedIn: [Moses Caleb](https://www.linkedin.com/in/caleb-moses-0a1b531b9/)
+- Twitter: [Calebmoses](https://twitter.com/CalebMo69401446)
 
 👤 **Sylvestre**
 
