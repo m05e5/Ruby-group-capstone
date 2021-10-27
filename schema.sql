@@ -56,11 +56,12 @@ CREATE TABLE games (
     FOREIGN KEY (author_id) REFERENCES authors (id),
     FOREIGN KEY (source_id) REFERENCES sources (id),
     FOREIGN KEY (label_id) REFERENCES labels (id)
-)
+);
 
 CREATE TABLE authors (
     id  INT GENERATED ALWAYS AS IDENTITY,
     first_name VARCHAR(100),
     last_name VARCHAR(100),
     PRIMARY KEY(id)
-)
+);
+
