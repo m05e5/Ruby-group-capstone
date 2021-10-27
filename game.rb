@@ -26,7 +26,7 @@ class Game < Item
   end
 
   def self.json_create(object)
-    game = new(object['multiplayer'], object['last_played_at'], Time.parse(object['publish_date']))
+    game = new(object['multiplayer'], Time.parse(object['last_played_at']), Time.parse(object['publish_date']))
     game.id = object['id']
     game
   end
