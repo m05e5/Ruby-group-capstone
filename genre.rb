@@ -14,15 +14,15 @@ class Genre
   end
 
   def to_s
-    "Genre - Name: #{@name}"
+    @name
   end
 
-  def to_json(*infos)
+  def to_json(*info)
     {
       JSON.create_id => self.class.name,
       'id' => @id,
       'name' => @name
-    }.to_json(*infos)
+    }.to_json(*info)
   end
 
   def self.json_create(object)

@@ -3,7 +3,7 @@ class Item
   attr_accessor :id
 
   def initialize(publish_date)
-    @id = Random.rand(1...1000)
+    @id = Random.rand(1..1000)
     @publish_date = publish_date
     @archived = false
   end
@@ -30,6 +30,21 @@ class Item
 
   def move_to_archive
     @archived = can_be_archived?
+  end
+
+  def to_s
+    "ID: #{@id}, Published Date: #{publish_date.strftime('%Y/%m/%d')}, Author: #{@author}, \
+    Genre: #{@genre}, Label: #{@label}"
+  end
+
+  def to_json(_info)
+    {
+      'id' => @id,
+      'publish_date' => @publish_date.strftime('%Y/%m/%d'),
+      'author_id' => @author.id,
+      'genre_id' => @genre.id,
+      'label_id' => @label.id
+    }
   end
 
   private

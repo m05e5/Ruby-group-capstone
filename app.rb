@@ -76,6 +76,8 @@ class App
   end
 
   def handle_add_item(option)
+    item = nil
+
     case option
     when '1'
       create_book
@@ -84,7 +86,13 @@ class App
     when '3'
       create_game
     else
-      puts 'That is not a valid option'
+      puts 'Please that is not a valid option'
+      return nil
     end
+
+    add_associations(item)
+
+    @items << item
+    puts 'Item has been added successfully'
   end
 end
