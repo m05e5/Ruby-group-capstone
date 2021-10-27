@@ -1,3 +1,8 @@
+require_relative './app'
+
 def main
-  puts 'ruby template'
+  app = App.new
+  app.run
 end
+
+main
