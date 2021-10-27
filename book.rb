@@ -13,18 +13,16 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 
-  #private :can_be_archived?
-
   def display
     "[Book] publisher: #{@publisher}, cover state: #{@cover_state}"
   end
 
   def to_json(publish_date)
     super.merge({
-      JSON.create_id => self.class.name,
-      'publisher' => @publisher,
-      'cover_state' => @cover_state
-    }).to_json(publish_date)
+                  JSON.create_id => self.class.name,
+                  'publisher' => @publisher,
+                  'cover_state' => @cover_state
+                }).to_json(publish_date)
   end
 
   def self.json_create(object)
