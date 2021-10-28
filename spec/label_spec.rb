@@ -12,4 +12,16 @@ describe Label do
       expect(@label.items).to include(item)
     end
   end
+
+  describe '#title' do
+    it 'should match the correct title' do
+      expect(@label.title).to eq('Microverse')
+    end
+  end
+
+  describe '#color' do
+    it 'should match the correct color' do
+      expect(@label.color).to eq('purple')
+    end
+  end
 end
